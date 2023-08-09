@@ -6,8 +6,8 @@ const app = express();
 app.use(bodyParser.json());
 
 
-const http = require('mongodb://localhost:27017', 
-{
+
+  mongoose.connect('mongodb+srv://boriscastellanosmatamoros:Jc4H3XmbNz18l8U0@cluster0.q3jmr4t.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -25,6 +25,6 @@ app.use('/rooms', roomRoutes);
 
 
 const PORT = 3000;
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
